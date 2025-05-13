@@ -1,0 +1,123 @@
+.about-section {
+    background: radial-gradient(ellipse at center, #0e1013 0%, #1a1d22 100%);
+    color: #e0f7ff;
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 2rem !important;
+}
+
+/* Image Styling */
+.image-wrapper {
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem;
+    box-shadow: 0 0 30px rgba(0, 247, 255, 0.1);
+    cursor: pointer;
+}
+
+.about-image {
+    border-radius: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Gradient animation behind image */
+.gradient-border {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: conic-gradient(from 0deg, #00f7ff, #4bcffa, #00f7ff);
+    filter: blur(40px);
+    animation: rotate 12s linear infinite;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Text Styling */
+.highlight {
+    color: #00f7ff;
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    /* background: linear-gradient(90deg, #00f7ff, #4bcffa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; */
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #a5b8c5;
+}
+
+/* Vision/Mission Cards with glass effect */
+.vm-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 247, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 247, 255, 0.2);
+}
+
+.vm-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #00f7ff;
+    position: relative;
+    padding-left: 1.8rem;
+}
+
+.vm-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    background: #00f7ff;
+    border-radius: 50%;
+}
+
+.vm-text {
+    color: #c1d7e0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .about-section {
+        padding: 2rem 2rem !important;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .lead-text {
+        font-size: 1rem;
+    }
+}
