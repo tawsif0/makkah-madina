@@ -67,7 +67,6 @@ html {
     height: 78px;
     max-width: 100%;
     transition: all 0.3s ease;
-
     /* sharp rendering */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;

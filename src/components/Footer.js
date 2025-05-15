@@ -67,7 +67,7 @@ export default function Footer() {
                     {/* Logo Column */}
                     <MDBCol lg="6" className="mb-4 footer-col pe-lg-5 align-items-start">
                         <div onClick={handleClick} role="button" className="footer-brand">
-                            <img src={logo} alt="Company Logo" className="logo-img mb-4" />
+                            <img src={logo} alt="Company Logo" className="logo-imgs mb-4" />
                             <p className="footer-description">আপনার আধ্যাত্মিক যাত্রার বিশ্বস্ত সঙ্গী। আমরা বিশেষজ্ঞ পিলগ্রিমেজ অভিজ্ঞতা তৈরি করি।</p>
                         </div>
                     </MDBCol>

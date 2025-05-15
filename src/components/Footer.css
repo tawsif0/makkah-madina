@@ -4,7 +4,6 @@
     border-top: 1px solid #18373f;
     position: relative;
     overflow: hidden;
-    font-family: 'SutonnyMJ', serif !important;
 }
 
 /* Social Section */
@@ -43,10 +42,9 @@
 
 /* Content Section */
 
-.logo-img {
+.logo-imgs {
     max-width: 220px;
     transition: transform 0.3s ease;
-    margin-bottom: 1.5rem !important;
 }
 
 .footer-description {
@@ -129,7 +127,7 @@
         padding-left: 0;
     }
 
-    .logo-img {
+    .logo-imgs {
         max-width: 200px;
     }
 }
