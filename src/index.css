@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'SutonnyMJ';
+    src: url('../public/fonts/SutonnyMJ-Regular.ttf') format('truetype');
+}
 html {
     scroll-behavior: smooth;
 }

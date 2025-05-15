@@ -2,7 +2,7 @@
     background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
     min-height: 100vh;
     padding: 40px 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'SutonnyMJ', serif !important;
     position: relative;
     overflow: hidden;
 }

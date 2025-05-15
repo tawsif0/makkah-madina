@@ -19,11 +19,8 @@ const Navbars = () => {
         { name: 'আমাদের সম্পর্কে', id: 'about-us' },
         { name: 'নিয়মাবলী', id: 'rules' },
         { name: 'প্যাকেজ সমূহ', id: 'products' },
-        { name: 'যোগাযোগ', id: 'services' }
-
-        // { name: 'Why Choose Us', id: 'why-choose-us' },
-        // { name: 'Clientele', id: 'clientele' }
-        // { name: 'Show Case', id: 'showcase' }
+        { name: 'যোগাযোগ', id: 'services' },
+        { name: 'প্রশ্নাবলী', id: 'faqs' }
     ];
 
     const handleNavClick = (id) => {

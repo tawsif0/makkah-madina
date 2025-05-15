@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import './Products.css'; // Your custom CSS
+import './Products.css'; // আপনার CSS ফাইল
 
 const hajjPackages = [
     {
@@ -21,7 +21,7 @@ const hajjPackages = [
     }
 ];
 
-const HajjPackagesComponent = () => {
+const HajjPackagesComponent = ({ onSelectPackage }) => {
     return (
         <div className="hajj-packages-section">
             <Container className="py-5 text-center">
@@ -42,7 +42,7 @@ const HajjPackagesComponent = () => {
                                         ))}
                                     </ul>
                                     <div className="button-container">
-                                        <button className="package-button">
+                                        <button className="package-button" onClick={() => onSelectPackage(pkg.title)}>
                                             বিস্তারিত জানুন
                                             <span className="button-shine"></span>
                                         </button>
