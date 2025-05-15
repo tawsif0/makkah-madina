@@ -5,91 +5,72 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0e0e0e;
-    color: white;
+    background: #ffffff;
+    color: #2d3436;
     text-align: center;
-    padding: 5rem 3rem 7rem 3rem;
+    padding: 8rem 2rem 10rem;
     overflow: hidden;
 }
 
-/* Video as background */
-
-/* Ensures content appears above video */
 .container {
     position: relative;
+    z-index: 2;
 }
 
-@media (max-width: 767px) {
-    .get-in-touch-section {
-        padding: 5rem 0.5rem 6rem 0.5rem !important;
-    }
-}
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .get-in-touch-section {
-        padding: 14rem 3rem !important;
-    }
-}
-
-/* Laptop (992px to 1199.98px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    .get-in-touch-section {
-        padding: 13rem 3rem !important;
-    }
-}
-/* ======== Text Wrapper (Full-Width Layout) ======== */
-
+/* ======== Text Wrapper ======== */
 .text-wrapper {
     max-width: 800px;
     padding: 40px 0;
     margin: 0 auto;
 }
+
 .section-titles {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: #2d3436;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -0.5px;
 }
 
-/* ======== Form Styling ======== */
+.section-titles::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ffc107, #ffc107, #ffc107);
+    border-radius: 2px;
+}
+
+/* ======== Modern Form Design ======== */
 .get-in-touch-form {
     max-width: 600px;
     margin: 0 auto;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+    background: #ffffff;
     border-radius: 20px;
-    backdrop-filter: blur(15px); /* Glass effect */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 1.5s ease-out;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.get-in-touch-form:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .get-in-touch-form h2 {
     margin-bottom: 2rem;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2d3436;
+    letter-spacing: -0.5px;
 }
-@media (max-width: 768px) {
-    .get-in-touch-form h2 {
-        font-size: 1.5rem;
-    }
-}
+
+/* ======== Form Elements ======== */
 .form-group {
     margin-bottom: 2rem;
     position: relative;
@@ -98,436 +79,199 @@
 .form-group label {
     display: block;
     margin-bottom: 0.75rem;
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 1rem;
 }
 
 .form-group input {
     width: 100%;
-    padding: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 14px 20px;
+    border: 2px solid #e2e8f0;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
+    background: #f8fafc;
+    color: #2d3436;
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-group input:focus {
-    border-color: #00d9ffc5;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 15px rgba(0, 255, 218, 0.3);
+    border-color: #18373f;
+    background: #ffffff;
+    box-shadow: 0 0 0 1px #18373f85;
     outline: none;
 }
 
-.form-group input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
 /* ======== Floating Label Effect ======== */
-.form-group.floating-label {
-    position: relative;
-}
-
-.form-group.floating-label input {
-    padding-top: 25px;
-    padding-bottom: 10px;
-}
-
 .form-group.floating-label label {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 14px;
+    left: 20px;
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: #18373f;
+    pointer-events: none;
     transition: all 0.3s ease;
 }
 
 .form-group.floating-label input:focus + label,
 .form-group.floating-label input:not(:placeholder-shown) + label {
-    top: 5px;
-    left: 10px;
-    font-size: 0.9rem;
-    color: #00fff2de;
+    top: -8px;
+    left: 12px;
+    font-size: 0.85rem;
+    background: white;
+    padding: 0 8px;
+    color: #18373f;
 }
-
-/* ======== Animated Background ======== */
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.highlight {
-    background: linear-gradient(90deg, #00c9ff, #00ffcc, #ff3399);
-    -webkit-background-clip: text;
-    background-size: 400% 400%;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientMove 3s infinite linear;
-}
-
-/* ======== Neon Glowing CTA Button ======== */
-.cta-button {
-    background: linear-gradient(135deg, #00c9ff, #3efff5);
+.PhoneInputInput {
+    flex: 1 1;
+    min-width: 0;
+    outline: none !important;
     border: none !important;
-    padding: 15px 40px !important;
-    font-size: 1.1rem;
-    font-weight: bold !important;
-    border-radius: 50px;
-    color: #0f0c29 !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+.PhoneInputInput:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    background: transparent !important;
+}
+/* ======== Modern Phone Input ======== */
+.phone-input-container {
+    border: 2px solid #e2e8f0;
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
 
-    transition: all 0.4s ease;
-    animation: fadeIn 2s ease-in-out;
+.phone-input-container:focus-within {
+    border-color: #18373f;
+    box-shadow: 0 0 0 1px #18373f85;
+}
+
+.phone-input {
+    color: #2d3436;
+    border: none;
+    outline: none;
+}
+
+/* ======== Gradient CTA Button ======== */
+.cta-button {
+    background: linear-gradient(135deg, #18373f, #357180);
+    color: white !important;
+    padding: 16px 45px !important;
+    font-size: 1.1rem;
+    font-weight: 600 !important;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    box-shadow: 0 0 15px rgba(0, 201, 255, 0.6), 0 0 30px rgba(87, 230, 255, 0.6);
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 1px #18373f85;
 }
 
-/* ======== Angled Divider (Cool Structural Effect) ======== */
-.angled-divider {
+.cta-button::after {
+    content: '';
     position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    background: #000000;
-    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.15) 50%, transparent 75%);
+    animation: shine 3s infinite;
 }
 
-/* Responsive Adjustments for Mobile Screens */
+@keyframes shine {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ======== Error States ======== */
+.form-group.floating-label .is-invalid {
+    border-color: #ef4444 !important;
+}
+
+.error-message {
+    color: #ef4444 !important;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    font-weight: 500;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%; /* positions it just below the input */
+    white-space: nowrap; /* optional, keep error text in one line */
+}
+
+/* ======== Modern Toast Notifications ======== */
+.custom-toast {
+    background: white !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    color: #2d3436 !important;
+    border-radius: 12px !important;
+}
+
+.toast-success {
+    border-left: 4px solid #10b981 !important;
+}
+
+.toast-error {
+    border-left: 4px solid #ef4444 !important;
+}
+
+/* ======== Responsive Design ======== */
 @media (max-width: 768px) {
-    .angled-divider {
-        height: 80px; /* Reduce height for smaller screens */
-        clip-path: polygon(100% 0, 0% 100%, 100% 100%); /* Adjust shape for better fit */
+    .get-in-touch-section {
+        padding: 6rem 1.5rem 8rem;
+    }
+
+    .section-titles {
+        font-size: 2.2rem;
+    }
+
+    .get-in-touch-form {
+        padding: 30px;
+    }
+
+    .cta-button {
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .angled-divider {
-        height: 60px; /* Further reduce height */
-        clip-path: polygon(100% 0, 0% 100%, 100% 100%); /* Subtle tweak for smaller devices */
+    .section-titles {
+        font-size: 1.8rem;
+    }
+
+    .get-in-touch-form h2 {
+        font-size: 1.6rem;
     }
 }
 
-/* ======== Subtle Background Animation ======== */
-
-/* ======== Fade-In Effect on Load ======== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.text-wrapper {
-    animation: fadeIn 1.5s ease-out;
-}
-
-/* ======== Phone Input Container ======== */
-.phone-input-container {
-    position: relative;
-    width: 100%;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px;
-    transition: all 0.3s ease;
-}
-
-.phone-input-container:focus-within {
-    border-color: #00d9ffc5;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 15px rgba(0, 255, 218, 0.3);
-    outline: none;
-}
-
-/* ======== Phone Input Styling ======== */
-.phone-input {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    background: transparent;
-    color: #ffffff;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.phone-input:focus {
-    outline: none;
-}
-
-/* ======== Country Code Dropdown ======== */
-.phone-input .PhoneInputCountry {
-    margin-right: 10px;
-    margin-top: 0.75rem;
-}
-
-.phone-input .PhoneInputCountrySelect {
-    background: transparent;
-    border: none;
-    color: #000000;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.phone-input .PhoneInputCountrySelect:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(0, 201, 255, 0.5);
-}
-
-.phone-input .PhoneInputCountrySelect:hover {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(0, 201, 255, 0.5);
-}
-
-/* ======== Flag Icon Styling ======== */
-.phone-input .PhoneInputCountryIcon {
-    width: 2.5rem;
-    height: 1.5rem;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 201, 255, 0.5);
-    transition: all 0.3s ease;
-}
-
-.phone-input .PhoneInputCountryIcon img {
-    border-radius: 4px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ======== Phone Number Input ======== */
-.phone-input .PhoneInputInput {
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 1rem;
-    padding: 0;
-    margin-left: 10px;
-    width: 100%;
-    outline: none;
-}
-
-.phone-input .PhoneInputInput::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* ======== Hover and Focus Effects ======== */
-
-.phone-input-container:focus-within {
-    border-color: #00d9ffc5;
-}
-
-/* Hover and Focus Effects */
-
-.form-groups {
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-.form-groups label {
-    display: block;
-    margin-bottom: 0.75rem;
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-}
-
-.form-groups input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.form-groups input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* ======== Floating Label Effect ======== */
-.form-groups.floating-label {
-    position: relative;
-}
-
-.form-groups.floating-label input {
-    padding-top: 25px;
-    padding-bottom: 10px;
-}
-
-.form-groups.floating-label label {
+/* ======== Animated Background Elements ======== */
+.get-in-touch-section::before {
+    content: '';
     position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    transition: all 0.3s ease;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 60%);
+    animation: rotate 20s linear infinite;
+    z-index: 1;
 }
 
-.form-groups.floating-label .phone-input-container:focus-within + label {
-    top: 10px;
-    left: 15px;
-    font-size: 0.9rem;
-    color: #00fff2de !important;
-}
-/* ======== Custom Toast Notifications ======== */
-.custom-toast {
-    background: linear-gradient(135deg, #2a2c2c, #304140) !important;
-    border-radius: 10px !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
-    color: #ffffff !important;
-    font-weight: bold !important;
-    font-size: 0.9rem !important; /* Default font size for mobile */
-    padding: 12px 16px !important; /* Default padding for mobile */
-    margin-bottom: 1rem !important;
-    animation: slideIn 0.5s ease-in-out !important;
-}
-
-.toast-success {
-    background: linear-gradient(135deg, #2a2c2c, #304140) !important;
-    color: #ffffff !important;
-    padding-right: 2rem !important;
-    font-weight: bold !important;
-}
-
-.toast-error {
-    background: linear-gradient(135deg, #2a2c2c, #304140) !important;
-    color: #ffffff !important;
-    padding-right: 2rem !important;
-    font-weight: bold !important;
-}
-
-.toast-body {
-    color: #ffffff !important;
-    text-align: center !important;
-    padding-right: 1.5rem !important; /* Add space for the close icon */
-}
-
-.toast-progress {
-    background: linear-gradient(135deg, #ff3399, #ff6b6b) !important;
-}
-
-/* Close button styling */
-.Toastify__close-button {
-    color: #ffffff !important;
-    align-self: center !important;
-}
-
-.Toastify__close-button:hover {
-    opacity: 1 !important;
-}
-
-/* Slide-in animation for toasts */
-@keyframes slideIn {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
     }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* ======== Responsive Design ======== */
-
-/* Mobile Devices (up to 767px) */
-@media (max-width: 767px) {
-    .custom-toast {
-        font-size: 0.8rem !important; /* Smaller font size for mobile */
-        padding: 10px 12px !important; /* Smaller padding for mobile */
-    }
-
-    .toast-success {
-        padding-right: 1.5rem !important; /* Adjust spacing for mobile */
-    }
-    .toast-error {
-        padding-right: 1.5rem !important; /* Adjust spacing for mobile */
-    }
-}
-
-/* Tablets and iPads (768px to 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .custom-toast {
-        font-size: 0.9rem !important; /* Slightly larger font size for tablets */
-        padding: 12px 16px !important; /* Slightly larger padding for tablets */
-    }
-
-    .toast-success {
-        padding-right: 2rem !important; /* Adjust spacing for tablets */
-    }
-    .toast-error {
-        padding-right: 2rem !important; /* Adjust spacing for tablets */
-    }
-}
-
-/* Laptops and Desktops (1024px and above) */
-@media (min-width: 1024px) {
-    .custom-toast {
-        font-size: 1rem !important; /* Larger font size for laptops and desktops */
-        padding: 15px 20px !important; /* Larger padding for laptops and desktops */
-    }
-
-    .toast-success {
-        padding-right: 2rem !important; /* Adjust spacing for larger screens */
-    }
-    .toast-error {
-        padding-right: 2rem !important; /* Adjust spacing for tablets */
-    }
-}
-/* ======== Custom Error Design ======== */
-.form-group.floating-label .is-invalid {
-    border-color: #ff6b6b !important; /* Red border for invalid fields */
-}
-
-.form-group.floating-label .error-message {
-    color: #ff6b6b; /* Red text for error messages */
-    font-size: 0.9rem;
-    margin-top: 5px;
-    font-weight: bold;
-    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in animation */
-}
-.phone-input-container.is-invalid {
-    border-color: #ff6b6b !important; /* Red border for invalid fields */
-}
-
-.form-groups.floating-label .error-message {
-    color: #ff6b6b; /* Red text for error messages */
-    font-size: 0.9rem;
-    margin-top: 5px;
-    font-weight: bold;
-    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in animation */
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    100% {
+        transform: rotate(360deg);
     }
 }

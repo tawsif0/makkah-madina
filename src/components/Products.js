@@ -1,41 +1,53 @@
+/* eslint-disable max-lines */
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import './Products.css'; // Custom CSS for styling
+import './Products.css'; // Your custom CSS
 
-const HajjRules = [
+const hajjPackages = [
     {
-        title: 'নিয়ম ১',
-        description: 'হজ পালনের জন্য ইহরাম পরিধান করতে হবে এবং নির্ধারিত জায়গা থেকে হজ যাত্রা শুরু করতে হবে।'
+        title: 'প্যাকেজ ১',
+        price: '৳ ১৫০,০০০',
+        facilities: ['মক্কা ও মদিনা ৫ রাত', 'প্রাইভেট বাস', '৩ বেলা খাবার', 'হজের সকল আনুষ্ঠানিকতা সহায়তা', 'ইহরাম প্রদান']
     },
     {
-        title: 'নিয়ম ২',
-        description: 'হজের জন্য পবিত্র স্থানগুলোতে একত্রিত হওয়া এবং হজের সমস্ত আনুষ্ঠানিকতা যথাযথভাবে পালন করা আবশ্যক।'
+        title: 'প্যাকেজ ২',
+        price: '৳ ২০০,০০০',
+        facilities: ['মক্কা ও মদিনা ৭ রাত', 'এক্সক্লুসিভ বাস', 'সুবিধাযুক্ত হোটেল', '৩ বেলা খাবার', 'বিশেষ গাইড', 'ইহরাম প্রদান']
     },
     {
-        title: 'নিয়ম ৩',
-        description: 'মক্কা এবং মদিনা ভ্রমণের সময় পবিত্রতা বজায় রাখতে হবে এবং শারীরিক ও মানসিকভাবে প্রস্তুত থাকতে হবে।'
-    },
-    {
-        title: 'নিয়ম ৪',
-        description: 'হজের সময় তাওয়াফ, সাঈ, এবং অন্যান্য গুরুত্বপূর্ণ কাজগুলো যথাযথভাবে সম্পন্ন করতে হবে।'
-    },
-    {
-        title: 'নিয়ম ৫',
-        description: 'হজের পর হালাল জীবিকা অর্জন এবং ধর্মীয় নিয়ম মেনে চলা অত্যন্ত গুরুত্বপূর্ণ।'
+        title: 'প্যাকেজ ৩',
+        price: '৳ ২৫০,০০০',
+        facilities: ['মক্কা ও মদিনা ১০ রাত', 'লাক্সারি বাস ও হোটেল', 'প্রাইভেট গাইড', 'ফাস্ট ট্র্যাক আনুষ্ঠানিকতা', 'পুরো সময় সহায়তা', 'ইহরাম প্রদান']
     }
 ];
 
-const HajjRulesComponent = () => {
+const HajjPackagesComponent = () => {
     return (
-        <div className="hajj-rules-section">
-            <Container className="py-5">
-                <h1 className="section-title">হজের নিয়ম</h1>
+        <div className="hajj-packages-section">
+            <Container className="py-5 text-center">
+                <h1 className="section-title text-center mb-5">হজ প্যাকেজ সমূহ</h1>
                 <Row className="g-4 justify-content-center">
-                    {HajjRules.map((rule, idx) => (
-                        <Col key={idx} lg={4} md={6} sm={12} className="hajj-rule-card-col">
-                            <div className="vm-card">
-                                <h3 className="rule-title">{rule.title}</h3>
-                                <p className="rule-description">{rule.description}</p>
+                    {hajjPackages.map((pkg, idx) => (
+                        <Col key={idx} lg={4} md={6} sm={12}>
+                            <div className="package-card">
+                                <div className="card-content">
+                                    <h3 className="package-title">{pkg.title}</h3>
+                                    <p className="package-price">{pkg.price}</p>
+                                    <ul className="facility-list">
+                                        {pkg.facilities.map((item, i) => (
+                                            <li key={i} className="facility-item">
+                                                <span className="icon">✓</span>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <div className="button-container">
+                                        <button className="package-button">
+                                            বিস্তারিত জানুন
+                                            <span className="button-shine"></span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </Col>
                     ))}
@@ -45,4 +57,4 @@ const HajjRulesComponent = () => {
     );
 };
 
-export default HajjRulesComponent;
+export default HajjPackagesComponent;

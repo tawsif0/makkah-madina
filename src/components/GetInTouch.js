@@ -19,32 +19,31 @@ const GetInTouch = () => {
     const validateForm = (formData) => {
         const errors = {};
 
-        // Name validation
+        // Name validation (required)
         if (!formData.name.trim()) {
             errors.name = 'নাম প্রয়োজন';
         } else if (formData.name.trim().length < 6) {
             errors.name = 'নাম কমপক্ষে ৬ অক্ষরের হতে হবে';
         }
 
-        // Email validation
+        // Email validation (optional, but if present, validate format)
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!formData.email.trim()) {
-            errors.email = 'ইমেইল প্রয়োজন';
-        } else if (!emailRegex.test(formData.email)) {
-            errors.email = 'অবৈধ ইমেইল ঠিকানা';
+        if (formData.email.trim()) {
+            if (!emailRegex.test(formData.email)) {
+                errors.email = 'অবৈধ ইমেইল ঠিকানা';
+            }
         }
 
-        // Phone number validation
+        // Phone number validation (required)
         if (!phone) {
             errors.phone = 'ফোন নম্বর প্রয়োজন';
         } else if (!isValidPhoneNumber(phone)) {
             errors.phone = 'অবৈধ ফোন নম্বর';
         }
 
-        // Address validation
-        // if (!formData.address.trim()) {
-        //     errors.address = 'মন্তব্য প্রয়োজন';
-        // } else if (formData.address.trim().length < 5) {
+        // Address validation (optional, no validation needed)
+        // You can uncomment and use if you want minimum length
+        // if (formData.address.trim() && formData.address.trim().length < 5) {
         //     errors.address = 'মন্তব্য কমপক্ষে ৫ অক্ষরের হতে হবে';
         // }
 
@@ -137,17 +136,15 @@ const GetInTouch = () => {
 
                         {/* Email Field */}
                         <div className="form-group floating-label">
-                            <input type="email" id="email" name="email" placeholder=" " className={errors.email ? 'is-invalid' : ''} autoComplete="off" />
+                            <input type="email" id="email" name="email" placeholder=" " autoComplete="off" />
                             <label htmlFor="email">ইমেইল</label>
-                            {errors.email && <div className="error-message">{errors.email}</div>}
                         </div>
 
                         {/* Phone Number Field with Country Code */}
-                        <div className="form-groups floating-label">
+                        <div className="form-group floating-label">
                             <div className={`phone-input-container ${errors.phone ? 'is-invalid' : ''}`}>
                                 <PhoneInput international defaultCountry="BD" value={phone} onChange={setPhone} placeholder="ফোন নম্বর লিখুন" className="phone-input" />
                             </div>
-                            <label htmlFor="phone">ফোন নম্বর</label>
                             {errors.phone && <div className="error-message">{errors.phone}</div>}
                         </div>
 
@@ -163,10 +160,10 @@ const GetInTouch = () => {
                             {isSubmitting ? (
                                 <>
                                     <ClipLoader color="#000" size={20} /> {/* Loader while submitting */}
-                                    <span style={{ marginLeft: '10px' }}>জমা হবে</span> {/* Text next to the loader */}
+                                    <span style={{ marginLeft: '10px' }}>জমা দিন</span> {/* Text next to the loader */}
                                 </>
                             ) : (
-                                '🚀 জমা হবে'
+                                'জমা দিন'
                             )}
                         </Button>
                     </form>

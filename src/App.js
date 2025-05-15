@@ -10,12 +10,12 @@ import Product from './components/Products';
 import Footer from './components/Footer';
 import Error from './pages/Error';
 import GetInTouch from './components/GetInTouch';
+import Rules from './components/Rules';
 
 const App = () => {
     return (
         <>
             <Routes>
-                {/* Route for the Home page */}
                 <Route
                     path="/"
                     element={
@@ -26,6 +26,9 @@ const App = () => {
                             </section>
                             <section id="about-us">
                                 <AboutSection />
+                            </section>
+                            <section id="rules">
+                                <Rules />
                             </section>
                             <section id="products">
                                 <Product />
@@ -38,7 +41,6 @@ const App = () => {
                     }
                 />
 
-                {/* Fallback route for invalid URLs (404 Error Page) */}
                 <Route path="*" element={<Error />} />
             </Routes>
         </>

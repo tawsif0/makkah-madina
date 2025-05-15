@@ -17,7 +17,8 @@ const Navbars = () => {
     const navItems = [
         { name: 'হোম', id: 'home' },
         { name: 'আমাদের সম্পর্কে', id: 'about-us' },
-        { name: 'নিয়মাবলী', id: 'products' },
+        { name: 'নিয়মাবলী', id: 'rules' },
+        { name: 'প্যাকেজ সমূহ', id: 'products' },
         { name: 'যোগাযোগ', id: 'services' }
 
         // { name: 'Why Choose Us', id: 'why-choose-us' },

@@ -40,9 +40,9 @@ const AboutSection = () => {
     }, []);
 
     return (
-        <section className="about-section py-5 overflow-hidden">
+        <section className="about-section overflow-hidden">
             <div className="container">
-                <div className="row align-items-center g-5">
+                <div className="row align-items-center g-5 py-5">
                     {/* Image Column */}
                     <div className="col-lg-6" ref={imageRef}>
                         <div className="image-wrapper position-relative">
